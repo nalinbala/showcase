@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunday Times - Infographics Hub</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =========================
+           GLOBAL RESET & BASE
+        ========================= */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #153357; /* Sunday Times Dark Blue */
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* =========================
+           MASTHEAD NAVIGATION
+        ========================= */
+      .masthead {
+        background-color: #0065ad; /* Sunday Times Header Blue */
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+      }
+
+      .masthead-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .masthead-left img,
+      .masthead-right img {
+        height: 35px;
+        width: auto;
+        display: block;
+      }
+
+      /* Default Logo Visibility */
+      .logo-mobile {
+        display: none !important; /* Hidden on larger screens */
+      }
+      .logo-full {
+        display: block !important;
+      }
+      /* =========================
+           MASTER GRID LAYOUT
+        ========================= */
+      .hub-container {
+        max-width: 1400px;
+        margin: 120px auto 60px; /* Top margin clears the fixed header */
+        padding: 0 40px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+        gap: 40px; /* Space between cards */
+      }
+
+      /* =========================
+           CARD STYLING
+        ========================= */
+      .project-card {
+        background-color: #1c436b; /* Slightly lighter blue for the card body */
+        border-radius: 4px;
+        overflow: hidden;
+        text-decoration: none; /* For when you turn them into links */
+        color: #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      /* The space reserved for your future images */
+      .card-image-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Standard widescreen thumbnail ratio */
+        background-color: #0d2138; /* Darker blue to indicate an empty image slot */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .card-image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* "display: none;" has been removed so the images show up */
+      }
+
+      .card-content {
+        padding: 24px;
+        flex-grow: 1;
+      }
+
+      .card-content h2 {
+        font-family: "Merriweather", serif;
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+        color: #ffffff;
+      }
+
+      .card-content p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(
+          255,
+          255,
+          255,
+          0.85
+        ); /* Slightly muted text for better contrast hierarchy */
+      }
+
+      @media (max-width: 600px) {
+        .hub-container {
+          padding: 0 20px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr; /* 1 Column on Mobile */
+        }
+
+        /* Swap the logos on mobile */
+        .logo-full {
+          display: none !important;
+        }
+        .logo-mobile {
+          display: block !important;
+        }
+
+        /* Optional: Tighten the header padding so the ST and Infographics 
+           logos sit closer to the edges like in your sketch */
+        .masthead-inner {
+          padding: 0 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="masthead">
+      <div class="masthead-inner">
+        <div class="masthead-left">
+          <img
+            src="assets/images/st-logo-full.svg"
+            alt="Sunday Times"
+            class="logo-full"
+          />
+          <img
+            src="assets/images/st-logo-mobile.svg"
+            alt="ST"
+            class="logo-mobile"
+          />
+        </div>
+        <div class="masthead-right">
+          <img src="assets/images/infographics-logo.svg" alt="Infographics" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="hub-container">
+      <div class="project-grid">
+        <a
+          href="https://nalinbala.github.io/138New/"
+          class="project-card"
+          aria-label="Read investigation: A Tragedy in the Skies"
+        >
+          <div class="card-image-placeholder">
+            <img
+              src="assets/images/thumb-1.webp"
+              alt="3D illustration of a plane crashing into a mountain range at night"
+            />
+          </div>
+          <div class="card-content">
+            <h2>A Tragedy in the Skies</h2>
+            <p>
+              On December 4, 2025, it marked 51 years since the tragic Martinair
+              Flight 138 plane crash in the Saptha Kanya (Seven Virgins)
+              mountain range in Maskeliya. This event is recognized as the
+              deadliest aviation disaster in Sri Lankan history.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://nalinbala.github.io/CVD-ST/"
+          class="project-card"
+          aria-label="Read investigation: Gone Too Soon"
+        >
+          <div class="card-image-placeholder">
+            <img
+              src="assets/images/thumb-2.webp"
+              alt="3D rendering of a large crowd of people with the statistic 2020: 620 deaths"
+            />
+          </div>
+          <div class="card-content">
+            <h2>Gone Too Soon</h2>
+            <p>
+              Data indicate that deaths from ischemic heart disease in young
+              people have more than doubled over the past decade.
+            </p>
+          </div>
+        </a>
+
+        <div class="project-card">
+          <div class="card-image-placeholder"></div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-image-placeholder"></div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-image-placeholder"></div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-image-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
